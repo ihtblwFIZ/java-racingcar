@@ -5,9 +5,10 @@ import java.util.List;
 
 public class Cars {
     // 자동차 경주에 참여하는 자동차들
-    private List<Car> cars;
+    private final List<Car> cars;
     public Cars(List<String> carNames) {
         cars = new ArrayList<>();
+        generateCars(carNames, cars);
     }
 
     private void generateCars(List<String> carNames, List<Car> cars) {
