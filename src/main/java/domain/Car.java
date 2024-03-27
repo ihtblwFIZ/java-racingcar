@@ -2,8 +2,9 @@ package domain;
 
 public class Car {
     // 자동차
-    private Name name;
-    private Position position;
+    private static final int MINIMUM_MOVE_POWER = 4;
+    private final Name name;
+    private final Position position;
 
     public Car(String name) {
         this.name = new Name(name);
@@ -16,5 +17,11 @@ public class Car {
 
     public int getCarPosition() {
         return position.getPosition();
+    }
+
+    public void moveCar(int number) {
+        if (number >= MINIMUM_MOVE_POWER) {
+            position.increasePosition();
+        }
     }
 }

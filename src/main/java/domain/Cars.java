@@ -17,4 +17,15 @@ public class Cars {
             cars.add(car);
         }
     }
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public void moveCars() {
+        for (Car c: cars) {
+            int number = RandomNumber.getRandomNumber();
+            c.moveCar(number);
+        }
+    }
 }
