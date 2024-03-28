@@ -1,5 +1,7 @@
 package domain;
 
+import util.Validation;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,6 +16,9 @@ public class Cars {
     }
 
     private void generateCars(List<String> carNames, List<Car> cars) {
+        Validation.validationCarNumber(carNames);
+        Validation.validationDuplicatedName(carNames);
+
         for(String name: carNames) {
             Car car = new Car(name);
             cars.add(car);

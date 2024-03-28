@@ -1,5 +1,7 @@
 package view;
 
+import util.Validation;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -23,6 +25,6 @@ public class InputView {
 
     public static int getTryCount() throws IOException {
         System.out.println(TRY_COUNT_MESSAGE);
-        return Integer.parseInt(bufferedReader.readLine());
+        return Validation.parseInteger(bufferedReader.readLine());
     }
 }

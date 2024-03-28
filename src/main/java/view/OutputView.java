@@ -19,6 +19,7 @@ public class OutputView {
         for (Car c: cars) {
             System.out.printf(STATUS_MESSAGE_FORMAT, c.getCarName(), getCurrentPosition(c.getCarPosition()));
         }
+        System.out.println();
     }
 
     private static String getCurrentPosition(int position) {
