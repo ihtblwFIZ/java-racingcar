@@ -23,6 +23,6 @@ public class InputView {
 
     public static int getTryCount() throws IOException {
         System.out.println(TRY_COUNT_MESSAGE);
-        return bufferedReader.read();
+        return Integer.parseInt(bufferedReader.readLine());
     }
 }
