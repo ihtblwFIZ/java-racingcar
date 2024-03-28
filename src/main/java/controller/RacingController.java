@@ -13,7 +13,7 @@ public class RacingController {
         final Cars cars = new Cars(createCars());
         final TryCount tryCount = new TryCount(setTryCount());
         racingResult(tryCount, cars);
-        findWinners();
+        findWinners(cars);
     }
 
     // 자동차 정보 입력
@@ -38,7 +38,7 @@ public class RacingController {
     }
 
     // 우승자 출력
-    private void findWinners() {
-
+    private void findWinners(Cars cars) {
+        OutputView.printRacingWinner(cars.findWinnerName());
     }
 }
