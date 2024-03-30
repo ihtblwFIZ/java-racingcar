@@ -14,14 +14,17 @@ public class Car {
         this.position = new Position();
     }
 
+    // 자동차 이름 반환
     public String getCarName() {
         return name.name();
     }
 
+    // 자동차 위치 반환
     public int getCarPosition() {
         return position.getPosition();
     }
 
+    // 자동차 전진
     public void moveCar(int number) {
         if (number >= MINIMUM_MOVE_POWER) {
             position.increasePosition();

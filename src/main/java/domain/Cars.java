@@ -18,6 +18,7 @@ public class Cars {
         generateCars(carNames, cars);
     }
 
+    // 자동차 생성
     private void generateCars(List<String> carNames, List<Car> cars) {
         for(String name: carNames) {
             Car car = new Car(name);
@@ -25,10 +26,12 @@ public class Cars {
         }
     }
 
+    // 자동차 리스트 반환
     public List<Car> getCars() {
         return cars;
     }
 
+    // 자동차 전진
     public void moveCars() {
         for (Car c: cars) {
             int number = RandomNumber.getRandomNumber();
@@ -36,12 +39,14 @@ public class Cars {
         }
     }
 
+    // 우승자 이름 반환
     public List<String> findWinnerName() {
         return findWinner().stream()
                 .map(Car::getCarName)
                 .collect(Collectors.toList());
     }
 
+    // 우승자 반환
     private List<Car> findWinner() {
         int winnerPosition = getWinnerPosition();
         return cars.stream()
@@ -49,6 +54,7 @@ public class Cars {
                 .collect(Collectors.toList());
     }
 
+    // 우승자 위치 반환
     private int getWinnerPosition() {
         return cars.stream()
                 .mapToInt(Car::getCarPosition)

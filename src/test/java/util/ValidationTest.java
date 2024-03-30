@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
-public class IntegerParserTest {
+public class ValidationTest {
     @DisplayName("정수가 들어오면 유효")
     @ParameterizedTest
     @CsvSource(value = {"1", "5", "100"})

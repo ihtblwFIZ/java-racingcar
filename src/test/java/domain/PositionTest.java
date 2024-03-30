@@ -10,7 +10,7 @@ public class PositionTest {
     @DisplayName("increasePosition은 position을 1 증가시킨다")
     @ParameterizedTest
     @CsvSource(value = {"1"})
-    void should_IncreasePosition_When_UsingIncresePosition(int movedPosition) {
+    void should_IncreasePosition_When_UsingIncreasePosition(int movedPosition) {
         Position position = new Position();
         position.increasePosition();
 

@@ -9,10 +9,12 @@ public class Position {
         position = INITIAL_POSITION;
     }
 
+    // 위치 반환
     public int getPosition() {
         return position;
     }
 
+    // 위치 증가(전진)
     public void increasePosition() {
         position++;
     }

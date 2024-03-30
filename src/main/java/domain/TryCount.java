@@ -11,10 +11,12 @@ public class TryCount {
         this.tryCount = tryCount;
     }
 
+    // 시도 횟수 감소
     public void decreaseTryCount() {
         tryCount--;
     }
 
+    // 시도 가능 여부 반환
     public boolean isPlayable() {
         return PLAYABLE_LOWER_BOUND <= tryCount;
     }
