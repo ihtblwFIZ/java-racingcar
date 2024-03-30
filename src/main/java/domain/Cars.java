@@ -11,14 +11,14 @@ public class Cars {
     private static final int DEFAULT_POSITION = 0;
     private final List<Car> cars;
     public Cars(List<String> carNames) {
+        Validation.validationCarNumber(carNames);
+        Validation.validationDuplicatedName(carNames);
+
         cars = new ArrayList<>();
         generateCars(carNames, cars);
     }
 
     private void generateCars(List<String> carNames, List<Car> cars) {
-        Validation.validationCarNumber(carNames);
-        Validation.validationDuplicatedName(carNames);
-
         for(String name: carNames) {
             Car car = new Car(name);
             cars.add(car);

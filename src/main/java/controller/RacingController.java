@@ -10,8 +10,8 @@ import java.util.List;
 
 public class RacingController {
     public void run() throws IOException {
-        final Cars cars = new Cars(createCars());
-        final TryCount tryCount = new TryCount(setTryCount());
+        Cars cars = new Cars(createCars());
+        TryCount tryCount = new TryCount(setTryCount());
         racingResult(tryCount, cars);
         findWinners(cars);
     }

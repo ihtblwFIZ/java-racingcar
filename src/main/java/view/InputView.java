@@ -17,7 +17,11 @@ public class InputView {
 
     public static List<String> getCarName() throws IOException {
         System.out.println(INPUT_CAR_NAME_MESSAGE.getMessage());
-        return Arrays.stream(bufferedReader.readLine().split(SEPARATOR_VALUE.getMessage()))
+        return splitNames(bufferedReader.readLine());
+    }
+
+    private static List<String> splitNames(String names) {
+        return Arrays.stream(names.split(SEPARATOR_VALUE.getMessage()))
                 .map(String::trim)
                 .collect(Collectors.toList());
     }

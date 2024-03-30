@@ -7,18 +7,17 @@ import java.util.Set;
 import static util.ErrorMessage.*;
 
 public class Validation {
-    private static final int NUMBER_LOWER_BOUND = 0;
-    private static final int NUMBER_UPPER_BOUND = 100;
+    private static final int COUNT_LOWER_BOUND = 0;
     private static final int NAME_MAX_SIZE = 5;
 
     public static void validationNameSize(String name) {
-        if (name.isEmpty() || name.length() > NAME_MAX_SIZE) {
+        if (name == null || name.isEmpty() || name.length() > NAME_MAX_SIZE) {
             throw new IllegalArgumentException(NAME_SIZE_ERROR.getMessage());
         }
     }
 
     public static void validationCarNumber(List<String> names) {
-        if (checkUpperBound(names.size())) {
+        if (names.isEmpty()) {
             throw new IllegalArgumentException(CAR_NUMBER_ERROR.getMessage());
         }
     }
@@ -39,20 +38,8 @@ public class Validation {
     }
 
     public static void validationTryCount(int tryCount) {
-        if (checkLowerBound(tryCount)) {
+        if (tryCount <= COUNT_LOWER_BOUND) {
             throw new IllegalArgumentException(TRY_RANGE_ERROR.getMessage());
         }
-
-        if (checkUpperBound(tryCount)) {
-            throw new IllegalArgumentException(TRY_LIMIT_ERROR.getMessage());
-        }
-    }
-
-    private static boolean checkLowerBound(int number) {
-        return number <= NUMBER_LOWER_BOUND;
-    }
-
-    private static boolean checkUpperBound(int number) {
-        return number >= NUMBER_UPPER_BOUND;
     }
 }

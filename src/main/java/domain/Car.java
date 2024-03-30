@@ -15,7 +15,7 @@ public class Car {
     }
 
     public String getCarName() {
-        return name.getName();
+        return name.name();
     }
 
     public int getCarPosition() {
